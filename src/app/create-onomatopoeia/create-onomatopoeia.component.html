@@ -1,0 +1,15 @@
+<form #onomatopoeiaForm="ngForm" (ngSubmit)="onomatopoeiaForm.valid && createOnomatopoeia()">
+
+    <fieldset>
+      <label for="onomatopoeia">Create your onomatopoeia</label>
+      <input id="onomatopoeia" name="onomatopoeia" type="text" [(ngModel)]="newOnomatopoeia" #onomatopoeia="ngModel" required>
+    </fieldset>
+
+    <!-- Message d'erreurs de onomatopoeia -->
+    <div *ngIf="onomatopoeiaForm.submitted && onomatopoeia.errors">
+        <span *ngIf="onomatopoeia.errors?.['required']">Le champ est requis</span>
+    </div>
+
+    <button type="reset">Restaurer</button>
+    <button type="submit">Sauvegarder</button>
+</form>

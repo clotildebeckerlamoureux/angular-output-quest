@@ -1,0 +1,12 @@
+<h1>List of onomatopoeias</h1>
+<ul>
+  @for (item of onomatopoeiaList; track item) {
+    <li>{{ item }}</li>
+  }
+</ul>
+
+<app-create-onomatopoeia (sendOnomatopoeiaToParent)="onReceiveNewOnomatopoeia($event)"> 
+
+</app-create-onomatopoeia>
+
+<router-outlet />
